@@ -39,7 +39,7 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum', 'Pencil', 'Gum', 'Banana', 
 
 // last passes the last item of the array into the callback.
 function last(array, callback) {
-  callback(array[3]); //How do I do this with array.length-1 ???
+  callback(array[array.length-1]); //How do I do this with array.length-1 ???
 }
 last(items, (last) => {
   console.log(last);
@@ -47,24 +47,24 @@ last(items, (last) => {
 
 // sumNums adds two numbers (x, y) and passes the result to the callback.
 function sumNums(x, y, callback) { 
-  callback = x+y;
-  return callback;
+  return callback(x + y)
 }
-sumNums();
-console.log(sumNums(2,3))
+console.log(sumNums(3,5, function(total){
+  return total
+}));
 
 // multiplyNums multiplies two numbers and passes the result to the callback.
 function multiplyNums(x, y, callback) {
-  callback = x*y;
-  return callback; 
+  return callback(x*y);
 }
-multiplyNums();
-console.log(multiplyNums(3,4))
+console.log(multiplyNums(3,4, function(total){
+  return total
+}));
 
 // contains checks if an item is present inside of the given array/list.
 function contains(item, list, cb) {
   if (items.length > 0) {
-  return cb ='True'// Pass true to the callback if it is, otherwise pass false.
+  return cb = true// Pass true to the callback if it is, otherwise pass false.
 } else {
   return cb = false
 }
