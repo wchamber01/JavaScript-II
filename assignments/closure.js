@@ -4,14 +4,15 @@
 // that manipulates variables defined in the outer scope.
 // The outer scope can be a parent function, or the top level of the script.
 
-let currentAge = 35;
-function birthday(x) {
-  let agePlusOne = x+1
-  return agePlusOne
-}
-let newAge = birthday(currentAge);
-console.log(newAge);
+function floridaWeather(){
+  const weather = "muggy";
+  console.log(`The weather in Florida is ${weather}!`);
 
+  function okeechobeeWeather(){
+    const adverb = "extraordinarily"
+    console.log(`The weather in Okeechobee is ${adverb} ${weather}!`);
+  }
+}
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
 
 
